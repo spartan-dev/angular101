@@ -1,0 +1,20 @@
+.container_suplement {
+  margin-top: 2em;
+}
+
+.align {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+.formTime {
+  padding: 2em;
+}
+
+.resultTime {
+  padding: 2em;
+}

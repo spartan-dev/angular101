@@ -1,1 +1,63 @@
-<p>tiempo works!</p>
+<div class="container container_suplement">
+  <h4>Consulta del tiempo por ciudad</h4>
+  <div class="align">
+    <div class="col-lg-6 col-md-6 formTime card">
+      <form [formGroup]="formulario" (ngSubmit)="handleSubmit()">
+        <div class="mb-3">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ciudad"
+            aria-describedby="emailHelp"
+            formControlName="ciudad"
+          />
+          <p
+            class="text-danger"
+            *ngIf="
+              formulario.get('ciudad')?.invalid &&
+              formulario.get('ciudad')?.touched
+            "
+          >
+            El campo solo acepta letras
+          </p>
+          <div id="emailHelp" class="form-text">Codigo de la ciudad</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Codigo Ciudad</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="codigoid"
+            formControlName="codigo"
+          />
+          <p
+            class="text-danger"
+            *ngIf="
+              formulario.get('codigo')?.invalid &&
+              formulario.get('codigo')?.touched
+            "
+          >
+            El campo solo acepta letras
+          </p>
+        </div>
+
+        <button type="submit" class="btn btn-danger">enviar</button>
+      </form>
+    </div>
+    <div class="col-lg-6 col-md-6 resultTime">
+      <div class="card">
+        <div class="card-body">
+          <ul>
+            <li>Temperatura:</li>
+            <li>Ciudad:</li>
+            <li>Latitud:</li>
+            <li>Longitud:</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

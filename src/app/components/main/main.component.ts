@@ -3,13 +3,21 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
+  ciudades = ['Mexico', 'Colombia', 'Bogota', 'Lima', 'Brazil'];
+  showCiudad: boolean = true;
+  changeCss: boolean = true;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  mostrar() {
+    this.showCiudad = !this.showCiudad;
   }
 
+  cambioCss() {
+    this.changeCss = !this.changeCss;
+  }
 }
